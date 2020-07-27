@@ -1,0 +1,123 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+	<style>
+
+			body{
+			  margin:8px;
+			  font-family: verdana,sans-serif;
+			  background-color: #F0FFF0;
+			}
+
+			.content{
+			  width: 500px;
+			  margin: 0px auto;
+			  position: relative;   
+			}
+
+
+			h1{
+			  font-size: 48px;
+			  color: #4682B4;
+			  padding: 10px 0;
+			  font-family: Verdana,sans-serif;
+			  font-weight: bold;
+			  text-align: center;
+			  padding-bottom: 10px;
+			}
+			
+			input:not([type="checkbox"]){
+			  width: 95%;
+			  margin-top: 7px;
+			  padding: 10px;    
+			  border: 1px solid #708090	;
+			
+			}
+
+			input[type="submit"]{
+			  width: 100%!important;
+			  cursor: pointer;  
+			  background: #5F9EA0;
+			  padding: 8px 5px;
+			  color: #fff;
+			  font-size: 20px;  
+			  border: 1px solid #fff;   
+			  margin-bottom: 10px;  
+			  text-shadow: 0 1px 1px #333;
+			  
+			  -webkit-border-radius: 5px;
+			  border-radius: 5px;
+			 
+			}
+			
+			input[type="reset"]{
+			  width: 100%!important;
+			  cursor: pointer;  
+			  background: #5F9EA0;
+			  padding: 8px 5px;
+			  color: #fff;
+			  font-size: 20px;  
+			  border: 1px solid #fff;   
+			  margin-bottom: 10px;  
+			  text-shadow: 0 1px 1px #333;
+			  
+			  -webkit-border-radius: 5px;
+			  border-radius: 5px;
+			}
+
+			#cadastro{
+			  position: absolute;
+			  top: 0px;
+			  width: 88%;   
+			  padding: 18px 6% 60px 6%;
+			  margin: 0 0 35px 0;
+			  background: rgb(247, 247, 247);
+			  border: 1px solid rgba(147, 184, 189,0.8);
+			 
+			}
+
+</style>
+</head>
+<body>
+
+	<header>
+    <h1>Cadastro cliente</h1> 
+	</header>
+	
+    <div class="content">      
+      <div id="cadastro">
+        <form method="post" action=""> 
+          
+          <p> 
+            <label for="nome_cad">Seu nome</label>
+            <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="ex.Pedro, Maria, etc." />
+          </p>
+          
+          <p> 
+            <label for="email_cad">Seu e-mail</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="ex.maria@maria.com.br"/> 
+          </p>
+          
+          <p> 
+            <label for="telefone_cad">Seu telefone</label>
+            <input id="telefone_cad" name="telefone_cad" required="required" type="tel" placeholder="ex.(48)99999-1234"/>
+          </p>
+		  
+		   <p> 
+            <label for="dt.nascimento_cad">Sua data de nascimento</label>
+            <input id="dt.nascimento_cad" name="dt.nascimento_cad" required="required" type="date"/>
+          </p>
+          
+          <p> 
+            <input type="submit" value="Salvar"/> 
+			<input type="reset" value="Cancelar"/>
+          </p>
+          
+          </p>
+        </form>
+      </div>
+    </div>
+  </div> 

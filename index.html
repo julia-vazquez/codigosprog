@@ -1,0 +1,213 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora de IMC</title>
+	
+	<style> 
+			.body{
+			font-family: Arial, Helvetica, sans-serif;
+			}
+		
+			.h3{
+			font-size: 30px;
+			color: #0B0B3B;
+			padding: 20px;
+			text-align: center;
+			}
+			.form{
+            left: 50%; 
+            margin: -130px 0 0 -270px; 
+            position: absolute; 
+            top: 15%; 
+			text-align: center;
+			} 
+
+			.title-blue {
+			margin: 20px 0;
+			font-size: 20px;
+			color: #1f5eaf;
+			font-weight: bold;
+			}
+
+			.inputs-calc {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 20px;
+			}
+			
+			.inputs-calc span {
+			  display: block;
+			  color: #1f5eaf;
+			}
+			.inputs-calc span small {
+
+			}
+			.inputs-calc input {
+			  display: block;
+			  width: 130px;
+			  padding: 6px 10px;
+			  border: 1px solid #1f5eaf;
+			  border-radius: 10px;
+			}
+
+			.btn1.btn2 {
+			  display: block;
+			  width: 100% !important;
+			  margin-top: 10px;
+			  margin-bottom: 25px;
+			}
+			.btn1.btn2 button {
+			  display: inline-block;
+			  vertical-align: middle;
+			  outline: none;
+			  border: 0px;
+			}
+			.btn1.btn2 li {
+			  float: left;
+			  margin-right: 30px;
+			  margin-left: 0px;
+			}
+			
+
+			.table-calc {
+			  width: 100%;
+			  max-width: 600px;
+			}
+
+			.table-calc thead tr td {
+			  background: #1f5eaf;
+			  color: #fff;
+			  border-radius: 10px;
+			  padding: 10px 20px;
+			  text-transform: uppercase;
+			}
+
+			.table-calc tbody tr.table-calc-blue td {
+			  color: #1f5eaf;
+			}
+			.table-calc tbody tr {
+			  border-bottom: 1px solid #707070;
+			  transition: .2s background;
+			  background: #fff;
+			}
+			.table-calc tbody tr td {
+			  color: #707070;
+			  padding: 10px 30px;
+			  text-transform: uppercase;
+			  border-bottom: 1px solid #dee2e7;
+			 
+			  
+			}
+
+			.calc-result {
+			  background:#707070;
+			  color: #fff;
+			  font-size: 22px;
+			  padding: 10px 20px;
+			  border-radius: 20px;
+			  width: 200px;
+			  margin: 40px 0px;
+			}
+
+			  (max-width: 767px) {
+			  .table-calc tbody tr td {
+				padding: 5px 3px;
+				font-size: 10px;
+		  }
+  </style>
+<head>
+  <body>
+  <form class="box" action="imc.html" method="POST">
+  <div id="calculadora_imc" >
+		<div class="container">
+			<div class="content-post">
+			
+				<h3 class="title-blue">Cálculo IMC</h3>
+				
+				<div class="inputs-calc">
+					<span>Altura <small>(ex.: 1,70)</small></span>
+					<input type="number" placeholder="Metros" id="altura_calc" maxlength="4">
+				</div> 
+
+				<div class="inputs-calc">
+					<span>Peso <small>(ex.: 69,2)</small></span>
+					<input type="number" placeholder="Quilos" id="peso_calc" maxlength="6">
+				</div> 
+				
+				<button type="reset" id="btn1">Limpar</button>
+				<button type="button" id="btn2" onclick="calcular()">Calcular </button>
+				
+				<div class="calc-result">
+					<span>Resultado</span>
+					<input type="number" id="result">
+					</div>
+			
+				
+				<script>
+				function calcular(){
+				let altura = document.getElementById('altura_calc').value;
+				let peso = document.getElementById('peso_calc').value;
+				let result = document.getElementById('result');
+				
+				let resultado= peso/(altura*altura)
+				result.value = resultado;
+				
+				}
+			</script>
+
+
+
+				<table class="table-calc" cellspacing="0">
+
+					<thead>
+						<tr>
+							<td colspan="3">Veja a interpretação do IMC</td>
+						</tr>
+					</thead>
+
+					<tbody>						
+						<tr class="table-calc-blue">
+							<td>IMC</td>
+							<td>Classificação</td>
+							<td style="text-align: center">Obesidade <small>(grau)</small></td>
+						</tr>
+						
+						<tr id="result_calc_0">
+							<td>Menor que 18,5</td>
+							<td>Magreza</td>
+							<td style="text-align: center">0</td>
+						</tr>
+						
+						<tr id="result_calc_1">
+							<td>Entre 18,5 e 24,9</td>
+							<td>Normal</td>
+							<td style="text-align: center">0</td>
+						</tr>
+						
+						<tr id="result_calc_2">
+							<td>Entre 25,0 e 29,9</td>
+							<td>Sobrepeso</td>
+							<td style="text-align: center">I</td>
+						</tr>
+						
+						<tr id="result_calc_3">
+							<td>Entre 30,0 e 39,9</td>
+							<td>Obesidade</td>
+							<td style="text-align: center">II</td>
+						</tr>
+
+						<tr id="result_calc_4">
+							<td>Maior que 40,0</td>
+							<td>Obesidade Grave</td>
+							<td style="text-align: center">III</td>
+						</tr>
+					</tbody>
+
+				</table>
+
+		
+	
+		</body>
+		</head>
+	</html>
